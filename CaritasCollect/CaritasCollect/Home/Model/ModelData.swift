@@ -7,21 +7,21 @@
 
 import Foundation
 
-func callAPILista(idRecolector: Int, estado: String)-> Array<Recoleccion>  {
-    var res : Array<Recoleccion> = []
-    guard let url = URL(string:"http://192.168.1.131:10206/recolecciones?id=\(idRecolector)&estado=\(estado)") else{
+func callAPILista(idRecolector: Int, estado: String)-> Array<Recolecciones>  {
+    var res : Array<Recolecciones> = []
+    guard let url = URL(string:"http://10.14.255.69:10206/recolecciones?id=\(idRecolector)&estado=\(estado)") else{
         return res
     }
     
     let group = DispatchGroup()
-   group.enter()
+    group.enter()
     
     let task = URLSession.shared.dataTask(with: url){
         data, response, error in
         let jsonDecoder = JSONDecoder()
         if (data != nil){
             do{
-                let recoleccionList = try jsonDecoder.decode([Recoleccion].self, from: data!)
+                let recoleccionList = try jsonDecoder.decode([Recolecciones].self, from: data!)
                 for recoleccionitem in recoleccionList {
                     res.append(Recoleccion(id: recoleccionitem.id, direccion: recoleccionitem.direccion))
                     print("Id: \(recoleccionitem.id) - Titulo: \(recoleccionitem.direccion) ")
