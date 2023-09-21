@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecoleccionRow: View {
-    var recoleccion : Recoleccion
+    var recoleccion : Detalles
     
     
     var body: some View {

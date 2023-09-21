@@ -12,6 +12,8 @@ struct RecoleccionesView: View {
 
     let opcionesRecolecciones = ["Pendientes","Completadas"]
     
+    @State private var listaRecolecciones : [Detalles] = []
+    
     var body: some View {
         
         VStack {
@@ -54,6 +56,9 @@ struct RecoleccionesView: View {
                     
             }
             
+        }
+        .onAppear(){
+            listaRecolecciones = aaaaa.recolecciones
         }
     }
 }

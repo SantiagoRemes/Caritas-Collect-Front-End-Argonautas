@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetalleView: View {
-    var recoleccion:Recoleccion
+    var recoleccion: Detalles
     var body: some View {
         Text("Datos Recoleccion")
         Text("Numero de Orden = \(recoleccion.id)")
