@@ -23,12 +23,22 @@ struct MapaView: View {
                         .font(.title)
                         .fontWeight(.heavy)
                         .foregroundColor(Color("302C"))
-                }
+                }.offset(x:0 , y:20)
                 
                 VStack{
-                    
-                }
+                    Image("mty2")
+                        .resizable(capInsets: EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0), resizingMode: .stretch)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 350.0, height: 350.0)
+                }.offset(x:0 , y:20)
              
+                VStack{
+                    Text("Estatus de Recoleccion")
+                        .font(.title3)
+                        .fontWeight(.heavy)
+                        .foregroundColor(Color("302C"))
+                }
+                
                 
                 Spacer()
             }
