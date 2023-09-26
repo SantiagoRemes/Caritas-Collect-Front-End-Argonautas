@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct CaritasCollectApp: App {
+    @StateObject var globalData = GlobalData()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(globalData)
         }
     }
 }
