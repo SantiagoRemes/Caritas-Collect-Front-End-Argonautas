@@ -7,7 +7,7 @@
 
 import Foundation
 
-func callAPILista(idRecolector: Int, estado: String) -> Recolecciones {
+func callAPIRecolecciones(idRecolector: Int, estado: String) -> Recolecciones {
     
     var lista : Recolecciones = Recolecciones(recolecciones: [], success: false)
     
@@ -37,6 +37,3 @@ func callAPILista(idRecolector: Int, estado: String) -> Recolecciones {
     group.wait()
     return lista
 }
-
-
-var aaaaa = callAPILista(idRecolector: 1, estado: "Pendiente")

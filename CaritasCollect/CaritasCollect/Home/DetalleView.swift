@@ -17,6 +17,6 @@ struct DetalleView: View {
 
 struct DetalleView_Previews: PreviewProvider {
     static var previews: some View {
-        DetalleView(recoleccion: listaRecolecciones[0])
+        DetalleView(recoleccion: Detalles(id: 1, idRecolector: 2, direccion: "Sample Address", estadoRecogido: .pendiente))
     }
 }

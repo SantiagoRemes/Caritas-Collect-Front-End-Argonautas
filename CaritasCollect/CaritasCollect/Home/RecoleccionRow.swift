@@ -27,6 +27,6 @@ struct RecoleccionRow: View {
 
 struct RecoleccionRow_Previews: PreviewProvider {
     static var previews: some View {
-        RecoleccionRow(recoleccion: listaRecolecciones[0])
+        RecoleccionRow(recoleccion: Detalles(id: 1, idRecolector: 2, direccion: "Sample Address", estadoRecogido: .pendiente))
     }
 }

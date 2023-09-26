@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecoleccionesView: View {
-    @State var seleccionRecolecciones : String = "Recolecciones Pnedientes"
+    @State var seleccionRecolecciones : String = "Pendientes"
 
     let opcionesRecolecciones = ["Pendientes","Completadas"]
     
@@ -58,7 +58,7 @@ struct RecoleccionesView: View {
             
         }
         .onAppear(){
-            listaRecolecciones = aaaaa.recolecciones
+            listaRecolecciones = callAPIRecolecciones(idRecolector: 1, estado: "Pendiente").recolecciones
         }
     }
 }
