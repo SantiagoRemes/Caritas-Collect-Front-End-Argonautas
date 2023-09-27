@@ -10,9 +10,10 @@ import SwiftUI
 struct PendienteOpciones: View {
     
     var recoleccion:Recoleccion
-    @State private var OpcionSeleccionada: Int = 1
-    @State private var mensaje: String = ""
+    @State private var OpcionSeleccionada: Int = 0
     
+    
+    let options = ["No esta en la ubicacion","No quizo pagarlo","Direccion incorrecta","No tiene el dinero completo"]
     
     var body: some View {
         VStack{
@@ -45,18 +46,14 @@ struct PendienteOpciones: View {
                     
                     Picker(selection: $OpcionSeleccionada, label: Text("Picker"))
                     {
-                        Text("No esta en la ubicacion").tag(1)
-                        
-                        Text("No quizo pagarlo").tag(2)
-                        
-                        Text("Direccion incorrecta").tag(3)
-                        
-                        Text("No tiene el dinero completo").tag(4)
+                        ForEach(0..<options.count){ index in Text(options[index])}
                         
                     }
-                    .onChange(of: OpcionSeleccionada){
+                    Text("Opcion seleccionada: \(options[OpcionSeleccionada])")
                         
-                        value in mensaje="Opcion Seleccinada \(value)"
+                        
+                        
+                    
                     }
                     
                     
@@ -67,7 +64,7 @@ struct PendienteOpciones: View {
                 
                 
                 Spacer()
-                Text(mensaje)
+               
             }
             
         }
@@ -75,7 +72,7 @@ struct PendienteOpciones: View {
        
     }
     
-}
+
 
 struct PendienteOpciones_Previews: PreviewProvider {
     static var previews: some View {
