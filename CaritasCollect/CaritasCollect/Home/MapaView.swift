@@ -11,7 +11,7 @@ struct MapaView: View {
     var recoleccion:Recoleccion
     var body: some View {
         VStack{
-            Banner().frame(height: 100.0).ignoresSafeArea()
+            
             NavigationStack{
                 
                 VStack{
@@ -23,7 +23,7 @@ struct MapaView: View {
                         .font(.title)
                         .fontWeight(.heavy)
                         .foregroundColor(Color("302C"))
-                }.offset(x:0 , y:20)
+                }.offset(x:0 , y:50)
                 
                 VStack{
                     Image("mty2")
@@ -37,12 +37,40 @@ struct MapaView: View {
                         .font(.title3)
                         .fontWeight(.heavy)
                         .foregroundColor(Color("302C"))
+                    HStack{
+                        
+                        Button{
+                            
+                        }label: {
+                            Text("Entregado")
+                                .font(.title2)
+                                .fontWeight(.heavy)
+                                .frame(width: 120.0, height: 70.0)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(Color("1575C"))
+                        .offset(x:-20)
+                        
+                        
+                        Button{
+                            
+                        }label: {
+                            Text("Pendiente")
+                                .font(.title2)
+                                .fontWeight(.heavy)
+                                .frame(width: 120.0, height: 70.0)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(Color("1575C"))
+                        .offset(x:20)
+                        
+                    }
+                    .padding(.top)
                 }
-                
                 
                 Spacer()
             }
-            
+            .offset(x:0, y:-70)
         }
     }
 }
