@@ -30,4 +30,5 @@ struct Detalles: Codable, Identifiable {
 
 enum EstadoRecogido: String, Codable {
     case pendiente = "Pendiente"
+    case recojido = "Recojido"
 }

@@ -50,6 +50,7 @@ struct LoginScreen: View {
                 
                 Button {
                     response = login(username: username, password: password)
+                    globalData.recolectorID = response._id_recolector
                     if (!response.success) {
                         mensaje = response.mensaje
                     } else {
