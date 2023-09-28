@@ -9,9 +9,10 @@ import Foundation
 
 func callAPIRecolecciones(idRecolector: Int, estado: String) -> Recolecciones {
     
+    print(estado)
     var lista : Recolecciones = Recolecciones(recolecciones: [], success: false)
     
-    guard let url = URL(string:"http://10.14.255.69:10206/recolecciones?id=\(idRecolector)&estado=\(estado)") else{
+    guard let url = URL(string:"http://192.168.1.131:10206/recolecciones?id=\(idRecolector)&estado=\(estado)") else{
         return lista
     }
     
