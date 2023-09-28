@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB197A052AC483FF0003167C /* PendienteOpciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB197A042AC483FF0003167C /* PendienteOpciones.swift */; };
 		FB9CB2F62AA79039004211F6 /* CaritasCollectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9CB2F52AA79039004211F6 /* CaritasCollectApp.swift */; };
 		FB9CB2F82AA79039004211F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9CB2F72AA79039004211F6 /* ContentView.swift */; };
 		FB9CB2FA2AA7903B004211F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9CB2F92AA7903B004211F6 /* Assets.xcassets */; };
@@ -25,10 +26,12 @@
 		FBBB2FFB2AAA1F390013DE29 /* Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB2FFA2AAA1F390013DE29 /* Get.swift */; };
 		FBBB2FFF2AAA285D0013DE29 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB2FFE2AAA285D0013DE29 /* Post.swift */; };
 		FBBB30022AAA2D610013DE29 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB30012AAA2D610013DE29 /* HomeScreen.swift */; };
+		FBC769862ABB545B00D10F99 /* MapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC769852ABB545B00D10F99 /* MapaView.swift */; };
 		FBCEC68B2AAAA5770099C55F /* LoginModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCEC68A2AAAA5770099C55F /* LoginModelData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB197A042AC483FF0003167C /* PendienteOpciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendienteOpciones.swift; sourceTree = "<group>"; };
 		FB9CB2F22AA79039004211F6 /* CaritasCollect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaritasCollect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9CB2F52AA79039004211F6 /* CaritasCollectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaritasCollectApp.swift; sourceTree = "<group>"; };
 		FB9CB2F72AA79039004211F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		FBBB2FFA2AAA1F390013DE29 /* Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Get.swift; sourceTree = "<group>"; };
 		FBBB2FFE2AAA285D0013DE29 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FBBB30012AAA2D610013DE29 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		FBC769852ABB545B00D10F99 /* MapaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaView.swift; sourceTree = "<group>"; };
 		FBCEC68A2AAAA5770099C55F /* LoginModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +133,8 @@
 				FBBA20782AAB8C1B006144D7 /* DetalleView.swift */,
 				FBBA207D2AAB8C1C006144D7 /* LogInView.swift */,
 				FBBA207A2AAB8C1B006144D7 /* RecoleccionesView.swift */,
+				FBC769852ABB545B00D10F99 /* MapaView.swift */,
+				FB197A042AC483FF0003167C /* PendienteOpciones.swift */,
 				FBBA207E2AAB8C1C006144D7 /* RecoleccionRow.swift */,
 				FBBA20792AAB8C1B006144D7 /* SwiftUIView.swift */,
 				FBBB30012AAA2D610013DE29 /* HomeScreen.swift */,
@@ -207,12 +213,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBBA20802AAB8C1C006144D7 /* SwiftUIView.swift in Sources */,
+				FB197A052AC483FF0003167C /* PendienteOpciones.swift in Sources */,
 				FBBA20842AAB8C1C006144D7 /* LogInView.swift in Sources */,
 				FBBA20772AAB70DF006144D7 /* ModelData.swift in Sources */,
 				FB9CB2F82AA79039004211F6 /* ContentView.swift in Sources */,
 				FBBA207F2AAB8C1C006144D7 /* DetalleView.swift in Sources */,
 				FBBA20832AAB8C1C006144D7 /* ConfiguracionView.swift in Sources */,
 				FBBA20762AAB70DF006144D7 /* Recoleccion.swift in Sources */,
+				FBC769862ABB545B00D10F99 /* MapaView.swift in Sources */,
 				FB9CB30C2AA8D46F004211F6 /* LoginScreen.swift in Sources */,
 				FBBA20752AAB70DF006144D7 /* Fecha.swift in Sources */,
 				FBBA20852AAB8C1C006144D7 /* RecoleccionRow.swift in Sources */,

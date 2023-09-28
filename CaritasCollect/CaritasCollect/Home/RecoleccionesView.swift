@@ -36,7 +36,7 @@ struct RecoleccionesView: View {
                 VStack{
                     List(listaRecolecciones){
                         recoleccionItem in NavigationLink{
-                            DetalleView(recoleccion: recoleccionItem)
+                            MapaView(recoleccion: recoleccionItem)
                         }label: {
                             RecoleccionRow(recoleccion: recoleccionItem)
                         }
