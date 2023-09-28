@@ -36,7 +36,7 @@ struct RecoleccionesView: View {
                     }.offset(x:0,y:40).pickerStyle(SegmentedPickerStyle())
                         .onChange(of: seleccionRecolecciones) {
                             value in
-                            listaRecolecciones = callAPIRecolecciones(idRecolector: idRecolector, estado: seleccionRecolecciones).recolecciones
+                            listaRecolecciones = callAPIRecolecciones(idRecolector: 1, estado: seleccionRecolecciones).recolecciones
                         }
                         
                     
@@ -64,10 +64,7 @@ struct RecoleccionesView: View {
             
         }
         .onAppear(){
-            listaRecolecciones = callAPIRecolecciones(idRecolector: idRecolector, estado: seleccionRecolecciones).recolecciones
-        }
-        .refreshable {
-            listaRecolecciones = callAPIRecolecciones(idRecolector: idRecolector, estado: seleccionRecolecciones).recolecciones
+            listaRecolecciones = callAPIRecolecciones(idRecolector: 1, estado: seleccionRecolecciones).recolecciones
         }
     }
 }

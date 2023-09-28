@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    
     var body: some View {
         
         TabView{
@@ -31,6 +30,7 @@ struct HomeScreen: View {
             LogInView()
                 .tabItem{
                     Label("Log Out", systemImage: "door.left.hand.open")
+                    
                 }
         }.tint(.white)
         
