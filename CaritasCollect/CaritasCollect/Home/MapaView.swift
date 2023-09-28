@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct MapaView: View {
+    
     var recoleccion:Recoleccion
+    @State private var IsPendiente = true
+    
     var body: some View {
         VStack{
             
@@ -52,9 +55,7 @@ struct MapaView: View {
                         .offset(x:-20)
                         
                         
-                        Button{
-                            
-                        }label: {
+                        NavigationLink(destination: PendienteOpciones(recoleccion: recoleccion)) {
                             Text("Pendiente")
                                 .font(.title2)
                                 .fontWeight(.heavy)
@@ -62,7 +63,8 @@ struct MapaView: View {
                         }
                         .buttonStyle(.borderedProminent)
                         .tint(Color("1575C"))
-                        .offset(x:20)
+                        .offset(x: 20)
+                        
                         
                     }
                     .padding(.top)
