@@ -10,7 +10,7 @@ import Foundation
 func login(username: String, password: String) -> Get {
     var res : Get = Get(_id_recolector: 0, mensaje: "", success: false)
     
-    guard let url = URL(string:"http://10.14.255.69:10206/login?usuario=\(username)&contrasena=\(password)") else {
+    guard let url = URL(string:"http://192.168.1.131:10206/login?usuario=\(username)&contrasena=\(password)") else {
         return res
     }
     
@@ -38,6 +38,8 @@ func login(username: String, password: String) -> Get {
     task.resume()
     
     group.wait()
+    
+    idRecolector = res._id_recolector
     
     return res
 }
