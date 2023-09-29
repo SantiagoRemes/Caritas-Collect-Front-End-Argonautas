@@ -42,13 +42,13 @@ struct RecoleccionesView: View {
                     
                 }.offset(x:0,y:-9)
                 VStack{
-                    List(listaRecolecciones){
-                        recoleccionItem in NavigationLink{
-                            DetalleView(recoleccion: recoleccionItem)
-                        }label: {
-                            RecoleccionRow(recoleccion: recoleccionItem)
-                        }
-                    
+                    List(listaRecolecciones) { recoleccionItem in
+                        NavigationLink(
+                            destination: DetalleView(idRecibo: recoleccionItem.id),
+                            label: {
+                                RecoleccionRow(recoleccion: recoleccionItem)
+                            }
+                        )
                     }.listStyle(.inset)
                     
                 }

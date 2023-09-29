@@ -8,5 +8,5 @@
 import SwiftUI
 
 class GlobalData: ObservableObject {
-    @Published var recolectorID: Int = 0
+    var recolectorID: Int = 2
 }
