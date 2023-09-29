@@ -10,7 +10,7 @@ import SwiftUI
 struct RecoleccionesView: View {
     @State var seleccionRecolecciones : String = "Pendiente"
 
-    let opcionesRecolecciones = ["Pendiente","Recojido"]
+    let opcionesRecolecciones = ["Pendiente","Recogido"]
     
     @State private var listaRecolecciones : [Detalles] = []
     
@@ -31,13 +31,19 @@ struct RecoleccionesView: View {
                     
                     Picker("Opciones",selection: $seleccionRecolecciones){
                         ForEach(opcionesRecolecciones, id: \.self){
-                            opcion in Text(opcion).tag(opcion)
+                            opcion in Text(opcion)
+                                .tag(opcion)
                         }
-                    }.offset(x:0,y:40).pickerStyle(SegmentedPickerStyle())
-                        .onChange(of: seleccionRecolecciones) {
-                            value in
-                            listaRecolecciones = callAPIRecolecciones(idRecolector: idRecolector, estado: seleccionRecolecciones).recolecciones
-                        }
+                    }
+                    .padding(.horizontal, 16)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(8)
+                    .offset(x:0,y:40)
+                    .pickerStyle(SegmentedPickerStyle())
+                    .onChange(of: seleccionRecolecciones) {
+                        value in
+                        listaRecolecciones = callAPIRecolecciones(idRecolector: idRecolector, estado: seleccionRecolecciones).recolecciones
+                    }
                         
                     
                 }.offset(x:0,y:-9)

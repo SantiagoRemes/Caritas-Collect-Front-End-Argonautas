@@ -13,7 +13,9 @@ struct PendienteOpciones: View {
     @State private var OpcionSeleccionada: Int = 0
     
     
-    let options = ["No esta en la ubicacion","No quizo pagarlo","Direccion incorrecta","No tiene el dinero completo"]
+    let options = ["No esta en la ubicación","No quizo pagarlo","Dirección incorrecta","No tiene el dinero completo"]
+    
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack{
@@ -38,48 +40,42 @@ struct PendienteOpciones: View {
                         .padding(.top)
                         .foregroundColor(Color("320C"))
                     
-                    Text("Elija la razon por la que esta recoleccion esta pendiente")
-                        .font(.title3)
+                    Text("Elija la razón por la que esta recoleccion esta pendiente")
+                        .font(.title)
                         .fontWeight(.medium)
                         .multilineTextAlignment(.center)
                         .padding(.top)
-                    
-                    Picker(selection: $OpcionSeleccionada, label: Text("Picker")){
-                        ForEach(0..<options.count){ index in Text(options[index])}
-                    }
-                    Text("Opcion seleccionada: \(options[OpcionSeleccionada])")
-                        
-                        
-                        NavigationLink(destination: PendienteOpciones(recoleccion: recoleccion)) {
-                            Text("Pendiente")
-                                .font(.title2)
-                                .fontWeight(.heavy)
-                                .frame(width: 120.0, height: 70.0)
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .tint(Color("1575C"))
-                        .offset(x: 20)
-                    
-                    }
-                    
-                    
-                    
-                }.offset(x:0 , y:50)
-                
-                
-                
-                
-                Spacer()
-               
-            }
-        .toolbar(.hidden)
-            
-        }
-        
-       
-    }
-    
 
+                        Picker("Comentario", selection: $OpcionSeleccionada){
+                            ForEach(0..<options.count){ index in Text(options[index])
+                                    .font(.title)
+                            }
+                        }
+                        .pickerStyle(.wheel)
+                        .overlay(RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color("1575C"), lineWidth: 4))
+                        .padding(.horizontal, 20)
+                        
+                    Button{
+                        PutEstado(id: recoleccion._id_recibo, estado: "Pendiente", comentarios: options[OpcionSeleccionada])
+                        dismiss()
+                        dismiss()
+                    }label: {
+                        Text("Recogido")
+                            .font(.title2)
+                            .fontWeight(.heavy)
+                            .frame(width: 120.0, height: 70.0)
+                    }
+                    .padding(.top, 40)
+                    .buttonStyle(.borderedProminent)
+                    .tint(Color("1575C"))
+                    Spacer()
+                    }
+                }.offset(x:0 , y:0)
+                Spacer()
+        }
+    }
+}
 
 struct PendienteOpciones_Previews: PreviewProvider {
     static var previews: some View {

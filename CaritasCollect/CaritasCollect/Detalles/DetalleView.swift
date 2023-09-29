@@ -28,7 +28,7 @@ struct DetalleView: View {
                             .font(.largeTitle)
                             .fontWeight(.heavy)
                             .foregroundColor(Color("302C"))
-                        Text("Numero de Orden: \(recoleccion._id_recolector)")
+                        Text("Numero de Orden: \(recoleccion._id_recibo)")
                             .font(.title)
                             .fontWeight(.heavy)
                             .foregroundColor(Color("302C"))
@@ -48,30 +48,29 @@ struct DetalleView: View {
                             .foregroundColor(Color("302C"))
                         HStack{
                             
-                            Button{
-                                dismiss()
-                            }label: {
-                                Text("Entregado")
-                                    .font(.title2)
-                                    .fontWeight(.heavy)
-                                    .frame(width: 120.0, height: 70.0)
+                            if(recoleccion.estado_recogido != "Recogido"){
+                                Button{
+                                    PutEstado(id: idRecibo, estado: "Recogido", comentarios: "")
+                                    dismiss()
+                                }label: {
+                                    Text("Entregado")
+                                        .font(.title2)
+                                        .fontWeight(.heavy)
+                                        .frame(width: 120.0, height: 70.0)
+                                }
+                                .buttonStyle(.borderedProminent)
+                                .tint(Color("1575C"))
+                                .offset(x:-20)
+                                NavigationLink(destination: PendienteOpciones(recoleccion: recoleccion)) {
+                                    Text("Pendiente")
+                                        .font(.title2)
+                                        .fontWeight(.heavy)
+                                        .frame(width: 120.0, height: 70.0)
+                                }
+                                .buttonStyle(.borderedProminent)
+                                .tint(Color("1575C"))
+                                .offset(x: 20)
                             }
-                            .buttonStyle(.borderedProminent)
-                            .tint(Color("1575C"))
-                            .offset(x:-20)
-                            
-                            
-                            NavigationLink(destination: PendienteOpciones(recoleccion: recoleccion)) {
-                                Text("Pendiente")
-                                    .font(.title2)
-                                    .fontWeight(.heavy)
-                                    .frame(width: 120.0, height: 70.0)
-                            }
-                            .buttonStyle(.borderedProminent)
-                            .tint(Color("1575C"))
-                            .offset(x: 20)
-                            
-                            
                         }
                         .padding(.top)
                     }
@@ -83,7 +82,6 @@ struct DetalleView: View {
                     recoleccion = GetDetalles(id: idRecibo)
                 }
             }
-            .toolbar(.hidden)
         }
     }
 
