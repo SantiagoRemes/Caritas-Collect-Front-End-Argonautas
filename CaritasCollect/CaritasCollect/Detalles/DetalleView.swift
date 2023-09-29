@@ -53,7 +53,7 @@ struct DetalleView: View {
                                     PutEstado(id: idRecibo, estado: "Recogido", comentarios: "")
                                     dismiss()
                                 }label: {
-                                    Text("Entregado")
+                                    Text("Recogido")
                                         .font(.title2)
                                         .fontWeight(.heavy)
                                         .frame(width: 120.0, height: 70.0)

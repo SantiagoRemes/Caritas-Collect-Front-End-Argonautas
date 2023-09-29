@@ -61,7 +61,7 @@ struct PendienteOpciones: View {
                         dismiss()
                         dismiss()
                     }label: {
-                        Text("Recogido")
+                        Text("Pendiente")
                             .font(.title2)
                             .fontWeight(.heavy)
                             .frame(width: 120.0, height: 70.0)
