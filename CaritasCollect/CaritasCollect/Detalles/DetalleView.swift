@@ -25,14 +25,14 @@ struct DetalleView: View {
                     
                     VStack{
                         Text("\(recoleccion.direccion)")
-                            .font(.largeTitle)
+                            .font(.title)
                             .fontWeight(.heavy)
                             .foregroundColor(Color("302C"))
                         Text("Numero de Orden: \(recoleccion._id_recibo)")
                             .font(.title)
                             .fontWeight(.heavy)
                             .foregroundColor(Color("302C"))
-                    }.offset(x:0 , y:50)
+                    }.offset(x:0 , y:70)
                     
                     VStack{
                         Image("mty2")
@@ -46,33 +46,39 @@ struct DetalleView: View {
                             .font(.title3)
                             .fontWeight(.heavy)
                             .foregroundColor(Color("302C"))
-                        HStack{
                             
-                            if(recoleccion.estado_recogido != "Recogido"){
+                        VStack{
+                            
+                            if(recoleccion.estado_recogido != "Cobrado"){
                                 Button{
-                                    PutEstado(id: idRecibo, estado: "Recogido", comentarios: "")
+                                    PutEstado(id: idRecibo, estado: "Cobrado", comentarios: "")
                                     dismiss()
                                 }label: {
-                                    Text("Recogido")
-                                        .font(.title2)
+                                    Text("Cobrado")
+                                        .font(.title)
                                         .fontWeight(.heavy)
-                                        .frame(width: 120.0, height: 70.0)
+                                        .frame(width: 300.0, height: 75.0)
                                 }
                                 .buttonStyle(.borderedProminent)
                                 .tint(Color("1575C"))
-                                .offset(x:-20)
+                                .offset()
+                               
                                 NavigationLink(destination: PendienteOpciones(recoleccion: recoleccion)) {
-                                    Text("Pendiente")
-                                        .font(.title2)
+                                    Text("No cobrado")
+                                        .foregroundColor(Color("1575C"))
+                                        .font(.title)
                                         .fontWeight(.heavy)
-                                        .frame(width: 120.0, height: 70.0)
+                                        .frame(width: 300.0, height: 75.0)
+                                        
                                 }
                                 .buttonStyle(.borderedProminent)
-                                .tint(Color("1575C"))
-                                .offset(x: 20)
+                                .tint(.white)
+                                .overlay(RoundedRectangle(cornerRadius: 16)
+                                    .stroke(Color("1575C"), lineWidth: 4))
+                                .offset(y:10)
                             }
                         }
-                        .padding(.top)
+                        
                     }
                     
                     Spacer()
