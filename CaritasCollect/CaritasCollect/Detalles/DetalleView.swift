@@ -28,24 +28,54 @@ struct DetalleView: View {
                             .font(.title)
                             .fontWeight(.heavy)
                             .foregroundColor(Color("302C"))
+                            .offset(y:2)
+                        
                         Text("Numero de Orden: \(recoleccion._id_recibo)")
                             .font(.title)
                             .fontWeight(.heavy)
                             .foregroundColor(Color("302C"))
-                    }.offset(x:0 , y:70)
+                            
+                        HStack{
+                            VStack{
+                                Text("Donador: ").font(.title2).fontWeight(.bold).foregroundColor(Color("302C")).multilineTextAlignment(.leading).offset( x:-26,y:5)
+                                
+                                Text("Telefono de Casa: ").font(.title2).fontWeight(.bold).foregroundColor(Color("302C")).offset( x:16,y:5)
+                                
+                                Text("Telefono Celular: ").font(.title2).fontWeight(.bold).foregroundColor(Color("302C")).offset(x:12,y:5)
+                            }
+                            VStack{
+                                Text("\(recoleccion.pnombre_donador) \(recoleccion.lnombre_donador)").font(.title2).fontWeight(.bold).foregroundColor(Color("302C")).offset(x:-20, y:5)
+                                
+                                Text("\(recoleccion.tel_casa) ").font(.title2).fontWeight(.bold).foregroundColor(Color("302C")).offset( y:5)
+                                
+                                Text("\(recoleccion.tel_celular) ").font(.title2).fontWeight(.bold).foregroundColor(Color("302C")).offset( y:5)
+                                
+                            }.offset()
+                        }.frame(width: 400)
+                    }.padding(.bottom,1)
                     
                     VStack{
-                        Image("mty2")
-                            .resizable(capInsets: EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0), resizingMode: .stretch)
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 350.0, height: 350.0)
-                    }.offset(x:0 , y:20)
+                        MapaView(latitud: 25.649991, longitud: -100.29074)
+                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                            .frame(height: 230)
+                    }.padding(.bottom,5)
                  
                     VStack{
-                        Text("Estatus de Recoleccion")
-                            .font(.title3)
-                            .fontWeight(.heavy)
-                            .foregroundColor(Color("302C"))
+                        
+                        if(recoleccion.comentarios != ""){
+                            Text("Comentarios")
+                                .font(.title3)
+                                .fontWeight(.heavy)
+                                .foregroundColor(Color("302C"))
+                                
+                            Text("\(recoleccion.comentarios)")
+                                .font(.title3)
+                                .fontWeight(.heavy)
+                                .foregroundColor(Color("302C"))
+                                
+                                
+                        
+                        }
                             
                         VStack{
                             
@@ -78,12 +108,13 @@ struct DetalleView: View {
                                 .offset(y:10)
                             }
                         }
+                        .padding(.top)
                         
                     }
                     
                     Spacer()
                 }
-                .offset(x:0, y:-70)
+                .padding(.top)
                 .onAppear(){
                     recoleccion = GetDetalles(id: idRecibo)
                 }
