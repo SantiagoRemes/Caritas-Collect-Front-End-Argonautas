@@ -9,7 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        LoginScreen()
+        VStack {
+            Banner()
+                .frame(width: 400, height: 80)
+                .ignoresSafeArea()
+            
+            LoginScreen()
+                .padding(.top)
+        }
     }
 }
 

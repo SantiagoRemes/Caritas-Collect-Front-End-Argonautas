@@ -17,8 +17,9 @@ struct Banner: View {
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .foregroundColor(Color.white)
-                .offset(y: 30)
+                .offset(y: 50)
         }
+        .border(Color.red)
     }
 }
 

@@ -19,9 +19,7 @@ struct LoginScreen: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Banner()
-                    .frame(width: 400)
-                
+
                 
                 Text("Login")
                     .font(.largeTitle)
@@ -86,6 +84,7 @@ struct LoginScreen: View {
                     .offset(y: -20)
             }
             .padding()
+            .border(Color.red)
         }
     }
 }

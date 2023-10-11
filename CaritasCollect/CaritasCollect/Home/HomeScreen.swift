@@ -20,12 +20,6 @@ struct HomeScreen: View {
                     Label("Home", systemImage: "house.circle")
                 }
 
-            ConfiguracionView()
-                .tag(1)
-                .tabItem {
-                    Label("Configuracion", systemImage: "gearshape.fill")
-                }
-
             Text("Log Out")
                 .tag(2)
                 .tabItem {

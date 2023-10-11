@@ -14,12 +14,16 @@ struct RecoleccionesView: View {
     
     @State private var listaRecolecciones : [Detalles] = []
     
-    
+    init() {
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color("1575C"))
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Color("1575C"))], for: .normal)
+        UISegmentedControl.appearance().backgroundColor = .white
+    }
     
     var body: some View {
         
         VStack {
-            Banner().frame(height: 100.0).ignoresSafeArea()
             NavigationStack{
                 
                 ZStack{
@@ -35,11 +39,11 @@ struct RecoleccionesView: View {
                                 .tag(opcion)
                         }
                     }
-                    .padding(.horizontal, 16)
-                    .background(Color(.systemGray6))
                     .cornerRadius(8)
-                    .offset(x:0,y:40)
-                    .pickerStyle(SegmentedPickerStyle())
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color("1575C"), lineWidth: 4))
+                    .padding(.horizontal, 16)
+                    .offset(x:0,y:35)
+                    .pickerStyle(SegmentedPickerStyle()).foregroundColor(Color.orange)
                     .onChange(of: seleccionRecolecciones) {
                         value in
                         listaRecolecciones = callAPIRecolecciones(idRecolector: idRecolector, estado: seleccionRecolecciones).recolecciones
