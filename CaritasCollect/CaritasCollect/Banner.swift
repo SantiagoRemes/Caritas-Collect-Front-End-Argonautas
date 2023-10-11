@@ -19,7 +19,6 @@ struct Banner: View {
                 .foregroundColor(Color.white)
                 .offset(y: 50)
         }
-        .border(Color.red)
     }
 }
 

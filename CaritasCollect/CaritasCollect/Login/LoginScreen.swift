@@ -84,7 +84,6 @@ struct LoginScreen: View {
                     .offset(y: -20)
             }
             .padding()
-            .border(Color.red)
         }
     }
 }
