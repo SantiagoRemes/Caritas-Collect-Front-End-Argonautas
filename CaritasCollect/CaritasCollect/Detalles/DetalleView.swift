@@ -103,7 +103,7 @@ struct DetalleView: View {
                                         .font(.title)
                                         .fontWeight(.heavy)
                                         .frame(width: 300.0, height: 55.0)
-                                        .frame(width: 300.0, height: 75.0)
+                                        .frame(width: 300.0, height: 55.0)
                                 }
                                 .buttonStyle(.borderedProminent)
                                 .tint(.white)
