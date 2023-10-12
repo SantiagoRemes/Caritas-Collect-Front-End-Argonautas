@@ -14,12 +14,16 @@ struct RecoleccionesView: View {
     
     @State private var listaRecolecciones : [Detalles] = []
     
-    
+    init() {
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color("1575C"))
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Color("1575C"))], for: .normal)
+        UISegmentedControl.appearance().backgroundColor = .white
+    }
     
     var body: some View {
         
         VStack {
-            Banner().frame(height: 100.0).ignoresSafeArea()
             NavigationStack{
                 
                 ZStack{
@@ -35,11 +39,14 @@ struct RecoleccionesView: View {
                                 .tag(opcion)
                         }
                     }
-                    .padding(.horizontal, 16)
-                    .background(Color(.systemGray6))
                     .cornerRadius(8)
-                    .offset(x:0,y:40)
-                    .pickerStyle(SegmentedPickerStyle())
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color("1575C"), lineWidth: 4))
+                    .frame(height: 1)
+                    .padding(.horizontal, 16)
+                    .offset(x:0,y:35)
+                    .pickerStyle(SegmentedPickerStyle()).foregroundColor(Color.orange)
+                    .scaledToFit()
+                    .scaleEffect(CGSize(width: 1.02, height: 1.3))
                     .onChange(of: seleccionRecolecciones) {
                         value in
                         listaRecolecciones = callAPIRecolecciones(idRecolector: idRecolector, estado: seleccionRecolecciones).recolecciones
@@ -47,6 +54,8 @@ struct RecoleccionesView: View {
                         
                     
                 }.offset(x:0,y:-9)
+                    .padding(.bottom, 30)
+                
                 VStack{
                     List(listaRecolecciones) { recoleccionItem in
                         NavigationLink(
@@ -59,6 +68,7 @@ struct RecoleccionesView: View {
                     
                 }
                 .frame(height: 350.0)
+                .offset(y: 10)
                 
                 Image("logo-caritas")
                     .resizable(resizingMode: .stretch)
