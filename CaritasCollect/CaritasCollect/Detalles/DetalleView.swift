@@ -11,7 +11,17 @@ struct DetalleView: View {
 
     @State private var recoleccion: RecoleccionDetalles = RecoleccionDetalles(_id_donador: 0, _id_recibo: 0, _id_recolector: 0, comentarios: "", direccion: "", estado_recogido: "", lnombre_donador: "", pnombre_donador: "", tel_casa: 0, tel_celular: 0)
     
+        
+    
     @Environment(\.dismiss) private var dismiss
+    
+    private var backButton: some View {
+        Button(action: {
+            dismiss()
+        }) {
+            Image(systemName: "arrow.left.circle.fill").resizable(resizingMode: .stretch).aspectRatio(contentMode: .fit).frame(height: 35.0).offset(y:-5).ignoresSafeArea().tint(Color ("1575C")) // Usa una imagen del sistema
+        }
+    }
     
     let idRecibo: Int
     
@@ -20,16 +30,19 @@ struct DetalleView: View {
         }
     
     var body: some View {
+        
             VStack{
                 
                 NavigationStack{
                     
                     VStack{
+                        
                         Text("\(recoleccion.direccion)")
                             .font(.title)
                             .fontWeight(.heavy)
                             .foregroundColor(Color("302C"))
-                            .offset(y:2)
+                            .offset(y:2).navigationBarBackButtonHidden(true)
+                            .navigationBarItems(leading: backButton)
                         
                         Text("Numero de Orden: \(recoleccion._id_recibo)")
                             .font(.title)
@@ -47,9 +60,9 @@ struct DetalleView: View {
                             VStack{
                                 Text("\(recoleccion.pnombre_donador) \(recoleccion.lnombre_donador)").font(.title2).fontWeight(.bold).foregroundColor(Color("302C")).offset(x:-20, y:5)
                                 
-                                Text("\(recoleccion.tel_casa) ").font(.title2).fontWeight(.bold).foregroundColor(Color("302C")).offset( y:5)
+                                Text(String(recoleccion.tel_casa) ).font(.title2).fontWeight(.bold).foregroundColor(Color("302C")).offset( y:5)
                                 
-                                Text("\(recoleccion.tel_celular) ").font(.title2).fontWeight(.bold).foregroundColor(Color("302C")).offset( y:5)
+                                Text(String(recoleccion.tel_celular) ).font(.title2).fontWeight(.bold).foregroundColor(Color("302C")).offset( y:5)
                                 
                             }.offset()
                         }.frame(width: 400)
