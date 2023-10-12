@@ -58,7 +58,7 @@ struct PendienteOpciones: View {
                         
                     Button{
                         PutEstado(id: recoleccion._id_recibo, estado: "Pendiente", comentarios: options[OpcionSeleccionada])
-                        dismiss()
+                        regresar = true
                         dismiss()
                     }label: {
                         Text("Pendiente")

@@ -85,6 +85,7 @@ struct RecoleccionesView: View {
         .refreshable {
             listaRecolecciones = callAPIRecolecciones(idRecolector: idRecolector, estado: seleccionRecolecciones).recolecciones
         }
+        
     }
 }
 
