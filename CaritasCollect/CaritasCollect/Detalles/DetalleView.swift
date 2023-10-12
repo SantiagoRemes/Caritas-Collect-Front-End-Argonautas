@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetalleView: View {
+
     @State private var recoleccion: RecoleccionDetalles = RecoleccionDetalles(_id_donador: 0, _id_recibo: 0, _id_recolector: 0, comentarios: "", direccion: "", estado_recogido: "", lnombre_donador: "", pnombre_donador: "", tel_casa: 0, tel_celular: 0)
     
     @Environment(\.dismiss) private var dismiss
@@ -69,7 +70,7 @@ struct DetalleView: View {
                                         .font(.title)
                                         .fontWeight(.heavy)
                                         .frame(width: 300.0, height: 75.0)
-                                        
+                                    
                                 }
                                 .buttonStyle(.borderedProminent)
                                 .tint(.white)
