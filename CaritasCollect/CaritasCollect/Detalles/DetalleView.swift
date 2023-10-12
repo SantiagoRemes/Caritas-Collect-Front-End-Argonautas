@@ -58,23 +58,26 @@ struct DetalleView: View {
                         MapaView(latitud: 25.649991, longitud: -100.29074)
                             .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                             .frame(height: 230)
-                    }.padding(.bottom,5)
+                    }
                  
                     VStack{
                         
-                        if(recoleccion.comentarios != ""){
-                            Text("Comentarios")
-                                .font(.title3)
-                                .fontWeight(.heavy)
-                                .foregroundColor(Color("302C"))
-                                
-                            Text("\(recoleccion.comentarios)")
-                                .font(.title3)
-                                .fontWeight(.heavy)
-                                .foregroundColor(Color("302C"))
-                                
-                                
                         
+                        VStack{
+                            if(recoleccion.comentarios != ""){
+                                Text("Comentarios")
+                                    .font(.title3)
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(Color("302C"))
+                                
+                                Text("\(recoleccion.comentarios)")
+                                    .font(.title3)
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(Color("302C"))
+                                
+                                
+                                
+                            }
                         }
                             
                         VStack{
@@ -87,18 +90,18 @@ struct DetalleView: View {
                                     Text("Cobrado")
                                         .font(.title)
                                         .fontWeight(.heavy)
-                                        .frame(width: 300.0, height: 75.0)
+                                        .frame(width: 300, height: 55.0)
                                 }
                                 .buttonStyle(.borderedProminent)
                                 .tint(Color("1575C"))
-                                .offset()
+                                
                                
                                 NavigationLink(destination: PendienteOpciones(recoleccion: recoleccion)) {
                                     Text("No cobrado")
                                         .foregroundColor(Color("1575C"))
                                         .font(.title)
                                         .fontWeight(.heavy)
-                                        .frame(width: 300.0, height: 75.0)
+                                        .frame(width: 300.0, height: 55.0)
                                         
                                 }
                                 .buttonStyle(.borderedProminent)
@@ -108,13 +111,13 @@ struct DetalleView: View {
                                 .offset(y:10)
                             }
                         }
-                        .padding(.top)
+                        
                         
                     }
                     
                     Spacer()
-                }
-                .padding(.top)
+                }.offset(y:-20)
+                
                 .onAppear(){
                     recoleccion = GetDetalles(id: idRecibo)
                 }

@@ -73,7 +73,7 @@ struct PendienteOpciones: View {
                     }
                 }.offset(x:0 , y:0)
                 Spacer()
-        }
+        }.offset(y:-20)
     }
 }
 
