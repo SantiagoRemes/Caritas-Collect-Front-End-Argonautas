@@ -40,7 +40,7 @@ struct PendienteOpciones: View {
                         .padding(.top)
                         .foregroundColor(Color("320C"))
                     
-                    Text("Elija la razón por la que esta recoleccion no esta bobrada")
+                    Text("Elija la razón por la que esta recoleccion no esta cobrada")
                         .font(.title)
                         .fontWeight(.medium)
                         .multilineTextAlignment(.center)
