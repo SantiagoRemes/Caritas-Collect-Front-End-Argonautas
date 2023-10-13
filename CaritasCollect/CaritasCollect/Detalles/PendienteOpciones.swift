@@ -34,13 +34,13 @@ struct PendienteOpciones: View {
                     
                     
                     
-                    Text("Pendiente")
+                    Text("No cobrado")
                         .font(.largeTitle)
                         .fontWeight(.heavy)
                         .padding(.top)
                         .foregroundColor(Color("320C"))
                     
-                    Text("Elija la razón por la que esta recoleccion esta pendiente")
+                    Text("Elija la razón por la que esta recoleccion no esta bobrada")
                         .font(.title)
                         .fontWeight(.medium)
                         .multilineTextAlignment(.center)
