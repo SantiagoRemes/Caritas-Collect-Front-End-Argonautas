@@ -86,6 +86,7 @@ struct DetalleView: View {
                             if(recoleccion.estado_recogido != "Cobrado"){
                                 Button{
                                     PutEstado(id: idRecibo, estado: "Cobrado", comentarios: "")
+                                    
                                     dismiss()
                                 }label: {
                                     Text("Cobrado")
@@ -104,12 +105,19 @@ struct DetalleView: View {
                                         .fontWeight(.heavy)
                                         .frame(width: 300.0, height: 55.0)
                                         .frame(width: 300.0, height: 55.0)
+                                    
                                 }
                                 .buttonStyle(.borderedProminent)
                                 .tint(.white)
                                 .overlay(RoundedRectangle(cornerRadius: 16)
                                     .stroke(Color("1575C"), lineWidth: 4))
                                 .offset(y:10)
+                                .onAppear() {
+                                    if (regresar) {
+                                        regresar = false
+                                        dismiss()
+                                    }
+                                }
                             }
                         }
                         

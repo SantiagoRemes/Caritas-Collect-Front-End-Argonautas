@@ -8,3 +8,6 @@
 import Foundation
 
 var idRecolector = 2
+
+var regresar = false
+var refresh = false
