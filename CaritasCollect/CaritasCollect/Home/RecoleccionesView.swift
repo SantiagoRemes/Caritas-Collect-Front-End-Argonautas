@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct RecoleccionesView: View {
-    @State var seleccionRecolecciones : String = "Pendiente"
+    @State var seleccionRecolecciones : String = "No Cobrado"
 
-    let opcionesRecolecciones = ["Pendiente","Recogido"]
+    let opcionesRecolecciones = ["No Cobrado","Cobrado"]
     
     @State private var listaRecolecciones : [Detalles] = []
     

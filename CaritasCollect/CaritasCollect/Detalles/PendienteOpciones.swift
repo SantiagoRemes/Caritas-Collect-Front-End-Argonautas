@@ -34,13 +34,13 @@ struct PendienteOpciones: View {
                     
                     
                     
-                    Text("Pendiente")
+                    Text("No cobrado")
                         .font(.largeTitle)
                         .fontWeight(.heavy)
                         .padding(.top)
                         .foregroundColor(Color("320C"))
                     
-                    Text("Elija la razón por la que esta recoleccion esta pendiente")
+                    Text("Elija la razón por la que esta recoleccion no esta cobrada")
                         .font(.title)
                         .fontWeight(.medium)
                         .multilineTextAlignment(.center)
@@ -57,11 +57,11 @@ struct PendienteOpciones: View {
                         .padding(.horizontal, 20)
                         
                     Button{
-                        PutEstado(id: recoleccion._id_recibo, estado: "Pendiente", comentarios: options[OpcionSeleccionada])
+                        PutEstado(id: recoleccion._id_recibo, estado: "No Cobrado", comentarios: options[OpcionSeleccionada])
                         regresar = true
                         dismiss()
                     }label: {
-                        Text("Pendiente")
+                        Text("No Cobrado")
                             .font(.title2)
                             .fontWeight(.heavy)
                             .frame(width: 120.0, height: 70.0)
