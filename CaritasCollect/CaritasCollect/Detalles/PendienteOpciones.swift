@@ -57,7 +57,7 @@ struct PendienteOpciones: View {
                         .padding(.horizontal, 20)
                         
                     Button{
-                        PutEstado(id: recoleccion._id_recibo, estado: "Pendiente", comentarios: options[OpcionSeleccionada])
+                        PutEstado(id: recoleccion._id_recibo, estado: "No Cobrado", comentarios: options[OpcionSeleccionada])
                         dismiss()
                         dismiss()
                     }label: {
