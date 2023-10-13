@@ -17,6 +17,14 @@ struct PendienteOpciones: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    private var backButton: some View {
+        Button(action: {
+            dismiss()
+        }) {
+            Image(systemName: "arrow.left.circle.fill").resizable(resizingMode: .stretch).aspectRatio(contentMode: .fit).frame(height: 35.0).offset(y:-5).ignoresSafeArea().tint(Color ("1575C")) // Usa una imagen del sistema
+        }
+    }
+    
     var body: some View {
         VStack{
             
@@ -27,6 +35,8 @@ struct PendienteOpciones: View {
                         .font(.largeTitle)
                         .fontWeight(.heavy)
                         .foregroundColor(Color("302C"))
+                        .navigationBarBackButtonHidden(true)
+                        .navigationBarItems(leading: backButton)
                     Text("Numero de Orden: \(recoleccion._id_recibo)")
                         .font(.title)
                         .fontWeight(.heavy)
@@ -57,7 +67,7 @@ struct PendienteOpciones: View {
                         .padding(.horizontal, 20)
                         
                     Button{
-                        PutEstado(id: recoleccion._id_recibo, estado: "No Cobrado", comentarios: options[OpcionSeleccionada])
+                        PutEstado(id: recoleccion._id_recibo, estado: "NoCobrado", comentarios: options[OpcionSeleccionada])
                         regresar = true
                         dismiss()
                     }label: {
