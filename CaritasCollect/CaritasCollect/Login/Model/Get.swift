@@ -8,7 +8,7 @@
 import Foundation
 
 struct Get : Codable {
-    var _id_recolector: Int
+    var id: Int
     var mensaje: String
     var success: Bool
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-var idRecolector = 2
+var idRecolector = 0
 
 var regresar = false
 var refresh = false
