@@ -21,7 +21,7 @@ struct PendienteOpciones: View {
         Button(action: {
             dismiss()
         }) {
-            Image(systemName: "arrow.left.circle.fill").resizable(resizingMode: .stretch).aspectRatio(contentMode: .fit).frame(height: 35.0).offset(y:-5).ignoresSafeArea().tint(Color ("1575C")) // Usa una imagen del sistema
+            Image(systemName: "arrow.left.circle.fill").resizable(resizingMode: .stretch).aspectRatio(contentMode: .fit).frame(height: 35.0).offset(y:-10).ignoresSafeArea().tint(Color ("1575C")) // Usa una imagen del sistema
         }
     }
     
