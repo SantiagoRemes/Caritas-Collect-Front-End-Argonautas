@@ -17,6 +17,8 @@ struct RecoleccionDetalles: Codable {
     var _id_recibo: Int
     var _id_recolector: Int
     var comentarios: String
+    var lat: Double
+    var lon: Double
     var direccion: String
     var estado_recogido: String
     var lnombre_donador: String
@@ -24,3 +26,4 @@ struct RecoleccionDetalles: Codable {
     var tel_casa: Int
     var tel_celular: Int
 }
+
