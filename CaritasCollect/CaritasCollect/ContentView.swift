@@ -11,8 +11,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Banner()
-                .frame(width: 400, height: 80)
+                .frame(width: .infinity, height: 80)
                 .ignoresSafeArea()
+                .padding(0)
             
             LoginScreen()
                 .padding(.top)
