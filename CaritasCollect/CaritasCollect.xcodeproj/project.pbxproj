@@ -11,7 +11,6 @@
 		73B788012AC63DEC00169467 /* PendienteOpciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B788002AC63DEC00169467 /* PendienteOpciones.swift */; };
 		73B788032AC63FBB00169467 /* ModelDetalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B788022AC63FBB00169467 /* ModelDetalle.swift */; };
 		73B788052AC6402500169467 /* RecoleccionDetalles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B788042AC6402500169467 /* RecoleccionDetalles.swift */; };
-		73B8452B2ADC8E3D00C01B37 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B8452A2ADC8E3D00C01B37 /* GlobalData.swift */; };
 		FB1111C12AD6F85F003EC397 /* MapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1111C02AD6F85F003EC397 /* MapaView.swift */; };
 		FB9CB2F62AA79039004211F6 /* CaritasCollectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9CB2F52AA79039004211F6 /* CaritasCollectApp.swift */; };
 		FB9CB2F82AA79039004211F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9CB2F72AA79039004211F6 /* ContentView.swift */; };
@@ -35,7 +34,6 @@
 		73B788002AC63DEC00169467 /* PendienteOpciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendienteOpciones.swift; sourceTree = "<group>"; };
 		73B788022AC63FBB00169467 /* ModelDetalle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDetalle.swift; sourceTree = "<group>"; };
 		73B788042AC6402500169467 /* RecoleccionDetalles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoleccionDetalles.swift; sourceTree = "<group>"; };
-		73B8452A2ADC8E3D00C01B37 /* GlobalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
 		FB1111C02AD6F85F003EC397 /* MapaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaView.swift; sourceTree = "<group>"; };
 		FB9CB2F22AA79039004211F6 /* CaritasCollect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaritasCollect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9CB2F52AA79039004211F6 /* CaritasCollectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaritasCollectApp.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 				FB9CB3052AA8D415004211F6 /* Login */,
 				FB9CB2F52AA79039004211F6 /* CaritasCollectApp.swift */,
 				FB9CB2F72AA79039004211F6 /* ContentView.swift */,
-				73B8452A2ADC8E3D00C01B37 /* GlobalData.swift */,
 				FB9CB3032AA7924F004211F6 /* Banner.swift */,
 				73A4B43B2AC632F600BBAB3C /* RecolectorId.swift */,
 				FB9CB2F92AA7903B004211F6 /* Assets.xcassets */,
@@ -251,7 +248,6 @@
 				FB9CB3042AA7924F004211F6 /* Banner.swift in Sources */,
 				FBBA20812AAB8C1C006144D7 /* RecoleccionesView.swift in Sources */,
 				FBBB30022AAA2D610013DE29 /* HomeScreen.swift in Sources */,
-				73B8452B2ADC8E3D00C01B37 /* GlobalData.swift in Sources */,
 				FBBB2FFB2AAA1F390013DE29 /* Get.swift in Sources */,
 				FBCEC68B2AAAA5770099C55F /* LoginModelData.swift in Sources */,
 				FBBB2FFF2AAA285D0013DE29 /* Post.swift in Sources */,

@@ -21,7 +21,7 @@ struct PendienteOpciones: View {
         Button(action: {
             dismiss()
         }) {
-            Image(systemName: "arrow.left.circle.fill").resizable(resizingMode: .stretch).aspectRatio(contentMode: .fit).frame(height: 35.0).offset(y:-10).ignoresSafeArea().tint(Color ("1575C")) // Usa una imagen del sistema
+            Image(systemName: "arrow.left.circle.fill").resizable(resizingMode: .stretch).aspectRatio(contentMode: .fit).frame(height: 35.0).offset(y:-5).ignoresSafeArea().tint(Color ("1575C")) // Usa una imagen del sistema
         }
     }
     
@@ -89,6 +89,6 @@ struct PendienteOpciones: View {
 
 struct PendienteOpciones_Previews: PreviewProvider {
     static var previews: some View {
-        PendienteOpciones(recoleccion: RecoleccionDetalles(_id_donador: 0, _id_recibo: 0, _id_recolector: 0, comentarios: "", direccion: "", estado_recogido: "", lnombre_donador: "", pnombre_donador: "", tel_casa: 0, tel_celular: 0))
+        PendienteOpciones(recoleccion: RecoleccionDetalles(_id_donador: 0, _id_recibo: 0, _id_recolector: 0, comentarios: "", lat: 0, lon: 0, direccion: "", estado_recogido: "", lnombre_donador: "", pnombre_donador: "", tel_casa: 0, tel_celular: 0))
     }
 }

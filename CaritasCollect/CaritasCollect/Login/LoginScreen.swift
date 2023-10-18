@@ -14,8 +14,6 @@ struct LoginScreen: View {
     @State private var mensaje : String = ""
     @State var response : Get = Get(id: 0, mensaje: "", success: false)
     
-    @EnvironmentObject var globalData: GlobalData
-    
     var body: some View {
         NavigationStack {
             VStack {
@@ -48,11 +46,8 @@ struct LoginScreen: View {
                 
                 Button {
                     response = login(username: username, password: password)
-                    globalData.recolectorID = response.id
                     if (!response.success) {
                         mensaje = response.mensaje
-                    } else {
-                        globalData.recolectorID = response.id
                     }
                 } label: {
                     Text("Entrar")
